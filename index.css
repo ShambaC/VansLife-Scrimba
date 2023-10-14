@@ -273,6 +273,10 @@ nav a:hover, :active {
 
 .van-detail-body {
     padding: 1em;
+
+    max-width: 576px;
+
+    margin: 0 auto;
 }
 
 .back-btn {
