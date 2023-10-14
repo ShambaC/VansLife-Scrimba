@@ -129,6 +129,9 @@ nav a:hover, :active {
     display: flex;
     flex-direction: column;
 }
+.about-body img {
+    content: url(images/aboutBanner.png);
+}
 
 .about-main {
     display: flex;
