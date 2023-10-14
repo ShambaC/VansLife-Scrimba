@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 
 import Filters from "../components/Vans/Filters";
 import Card from "../components/Vans/Card";
+import { Link } from "react-router-dom";
 
 const filterContext = createContext()
 export { filterContext }
@@ -34,13 +35,15 @@ export default function Vans() {
                 <div className="van-cards-panel">
                     {returnFilteredList().map(van => {
                         return (
-                            <Card 
-                                key={van.id}
-                                imageUrl={van.imageUrl}
-                                name={van.name}
-                                price={van.price}
-                                type={van.type}
-                            />
+                            <Link key={van.id} to={`/vans/${van.id}`} >
+                                <Card                                     
+                                    id={van.id}
+                                    imageUrl={van.imageUrl}
+                                    name={van.name}
+                                    price={van.price}
+                                    type={van.type}
+                                />
+                            </Link>
                         )
                     })}
                 </div>

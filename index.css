@@ -46,7 +46,7 @@ nav a:hover, :active {
     font-weight: 500;
 }
 .nav-links a {
-    padding: 0 1.5em;
+    padding: 0 0.4em;
 
     color: #4D4D4D;
 }
@@ -80,7 +80,8 @@ nav a:hover, :active {
     margin: 0;
     padding: 0 2.25em;
 
-    background: url(images/homeBg.png);
+    background-image: url(images/homeBg.png);
+    background-color: #414141;
     background-size: cover;
     
     color: #ffffff;
@@ -193,6 +194,10 @@ nav a:hover, :active {
     flex-wrap: wrap;
     gap: 1.3em;
 }
+.van-cards-panel a {
+    text-decoration: none;
+    color: #161616;
+}
 
 /* ---BADGES--- */
 
@@ -262,4 +267,57 @@ nav a:hover, :active {
     width: 45%;
 
     padding: 0.8em 1.5em;
+}
+
+/* ---VAN DETAILS--- */
+
+.van-detail-body {
+    padding: 1em;
+}
+
+.back-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.6em;
+}
+.back-btn p {
+    color: #201F1D;
+    text-decoration: underline;
+}
+
+.details-main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    color: #161616;
+}
+.details-main-content img {
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+.details-main-content .badge {
+    width: 30%;
+}
+.details-main-content h1 {
+    margin-bottom: 0.3em;
+}
+#price-tag {
+    margin: 0;
+    font-size: 1.25rem;
+}
+#price-tag span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.rent-btn {
+    background-color: #FF8C38;
+    border-radius: 5px;
+
+    text-align: center;
+    color: #ffffff;
+
+    padding: 0.7em;
 }

@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { filterContext } from "../pages/Vans";
-
-export default function Badge({ type, state }) {
-    const { filter, setFilter } = useContext(filterContext)
+export default function Badge({ type, state, filter = "", onClick = () => {} }) {
     if(filter === type) {
         state = "selected"
     }
@@ -18,7 +15,7 @@ export default function Badge({ type, state }) {
     return (
         <div className="badge" 
             style={state ? {background: bg, color: "#FFEAD0"} : {}} 
-            onClick={() => setFilter(type)}
+            onClick={() => onClick(type)}
         >
             {type}
         </div>
