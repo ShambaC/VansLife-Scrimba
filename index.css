@@ -174,3 +174,88 @@ nav a:hover, :active {
 .explore-banner a:hover {
     background-color: #252525;
 }
+
+/* ---VANS PAGE--- */
+
+.vans-body {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.2em;
+}
+
+.van-cards-panel {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.3em;
+}
+
+/* ---BADGES--- */
+
+.badge {
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    text-align: center;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    padding: 0.8em 1.8em;
+}
+.badge :hover {
+    border: 2px solid #FF8C38;
+}
+
+/* ---FILTER--- */
+
+.filter-bar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+    align-items: center;
+
+    margin-bottom: 2em;
+}
+.filter-bar p {
+    margin: 0;
+
+    color: #4D4D4D;
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+/* ---CARDS--- */
+
+.explore-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width: 230px;
+}
+.explore-card img {
+    border-radius: 5px;
+}
+.card-name-price {
+    display: flex;
+    justify-content: space-between;
+}
+.card-name-price h3 {
+    margin: 0;
+    margin-top: 1em;
+}
+.explore-card p {
+    margin: 0;
+    align-self: flex-end;
+}
+.explore-card .badge {
+    color: #FFEAD0;
+    text-transform: capitalize;
+
+    width: 45%;
+
+    padding: 0.8em 1.5em;
+}

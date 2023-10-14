@@ -16,7 +16,7 @@ export default function About() {
                 <div className="explore-banner">
                     <h2>Your destination is waiting.</h2>
                     <h2>Your van is ready</h2>
-                    <Link>Explore our vans</Link>
+                    <Link to="/vans">Explore our vans</Link>
                 </div>
             </div>
         </div>
