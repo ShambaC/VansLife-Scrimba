@@ -13,6 +13,11 @@ a {
     text-decoration: none;
 }
 
+.active-route {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 /* ---NAVBAR--- */
 
 nav {
@@ -324,4 +329,25 @@ nav a:hover, :active {
     color: #ffffff;
 
     padding: 0.7em;
+}
+
+/* ---HOST LAYOUT--- */
+
+.host-body {
+    padding: 1.2em;
+}
+
+.host-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+}
+.host-nav a {
+    color: #4D4D4D;
+}
+.host-nav a:hover, :active {
+    text-decoration: underline;
+    font-weight: 500;
+
+    color: #161616;
 }

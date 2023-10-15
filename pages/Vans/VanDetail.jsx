@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { BsArrowLeft } from 'react-icons/bs'
 
-import Badge from "../components/Badge";
+import Badge from "../../components/Badge";
 
 
 export default function VanDetail() {

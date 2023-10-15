@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 
-import Filters from "../components/Vans/Filters";
-import Card from "../components/Vans/Card";
+import Filters from "../../components/Vans/Filters";
+import Card from "../../components/Vans/Card";
 import { Link } from "react-router-dom";
 
 const filterContext = createContext()

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import Badge from "../Badge";
-import { filterContext } from "../../pages/Vans";
+import { filterContext } from "../../pages/Vans/Vans";
 
 export default function Filters() {
     const { filter, setFilter } = useContext(filterContext)
