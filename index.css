@@ -11,11 +11,13 @@ html, body {
 
 a {
     text-decoration: none;
+    color: #161616;
 }
 
 .active-route {
     text-decoration: underline;
     font-weight: bold;
+    color: #161616;
 }
 
 /* ---NAVBAR--- */
@@ -394,4 +396,69 @@ nav a:hover, :active {
 }
 .host-van-card-info h3, p {
     margin: 0;
+}
+
+/* ---HOST VAN DETAILS PAGE--- */
+
+.host-van-det-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1em;
+
+    margin-top: 1.5em;
+}
+
+.van-det-layout {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #ffffff;
+    padding: 1em;
+}
+
+.van-det-layout-main {
+    display: flex;
+    justify-content: flex-start;
+
+    margin-bottom: 1.5em;
+}
+.van-det-layout-main img {
+    width: 160px;
+    height: 157px;
+
+    border-radius: 5px;
+}
+.van-det-layout-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+
+    padding-left: 1em;
+}
+.van-det-layout-info h1, p {
+    margin: 0;
+}
+.van-det-layout-info .badge {
+    text-transform: capitalize;
+    width: 7em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+.van-det-layout-info span {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.van-det-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+
+    margin-bottom: 2em;
+}
+.van-det-nav a:hover, :active {
+    font-weight: bold;
+    text-decoration: underline;
 }

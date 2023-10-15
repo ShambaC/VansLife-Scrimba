@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { BsArrowLeft } from 'react-icons/bs'
+
+import Badge from "../../../components/Badge";
 
 export default function HostVanDetails() {
     const { id } = useParams()
@@ -9,7 +11,7 @@ export default function HostVanDetails() {
     useEffect(() => {
         fetch(`/api/host/vans/${id}`)
             .then(res => res.json())
-            .then(data => setVan(data.vans))
+            .then(data => setVan(data.vans[0]))
     }, [van])
 
     return (
@@ -20,9 +22,39 @@ export default function HostVanDetails() {
             </Link>
             {
                 van ?
-                <main>
-                    
-                </main>
+                <div className="van-det-layout">
+                    <div className="van-det-layout-main">
+                        <img src={van.imageUrl} />
+                        <div className="van-det-layout-info">
+                            <Badge type={van.type} state="selected" />
+                            <h1>{van.name}</h1>
+                            <p><span>${van.price}</span>/day</p>
+                        </div>
+                    </div>
+                    <div className="van-det-nav">
+                        <NavLink 
+                            className={({ isActive }) => isActive ? "active-route" : ""}
+                            end
+                            to={`/host/vans/${id}`}
+                        >
+                            Details
+                        </NavLink>
+                        <NavLink 
+                            className={({ isActive }) => isActive ? "active-route" : ""}
+                            to={`/host/vans/${id}/pricing`}
+                        >
+                            Pricing
+                        </NavLink>
+                        <NavLink 
+                            className={({ isActive }) => isActive ? "active-route" : ""}
+                            end
+                            to={`/host/vans/${id}/photos`}
+                        >
+                            Photos
+                        </NavLink>
+                    </div>
+                    <Outlet />
+                </div>
                 : <h1>Loading ...</h1>
             }
         </div>
