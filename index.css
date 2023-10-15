@@ -335,6 +335,8 @@ nav a:hover, :active {
 
 .host-body {
     padding: 1.2em;
+
+    background-color: #FFF7ED;
 }
 
 .host-nav {
@@ -350,4 +352,46 @@ nav a:hover, :active {
     font-weight: 500;
 
     color: #161616;
+}
+
+/* ---HOST VANS PAGE--- */
+
+.host-vans-list-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.host-vans-list-body a {
+    color: #161616;
+}
+
+.host-van-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: #ffffff;
+    border-radius: 5px;
+
+    padding: 1.2em;
+}
+.host-van-card img {
+    width: 15vw;
+    height: 15vw;
+    max-width: 100px;
+    max-height: 100px;
+
+    margin-right: 1em;
+
+    border-radius: 5px;
+}
+
+.host-van-card-info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+.host-van-card-info h3, p {
+    margin: 0;
 }
