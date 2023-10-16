@@ -8,22 +8,22 @@ export default function HostLayout() {
                 <NavLink 
                     className={({ isActive }) => isActive ? "active-route" : ""} 
                     end
-                    to='/host'>
+                    to='.'>
                     Dashboard
                 </NavLink>
                 <NavLink 
                     className={({ isActive }) => isActive ? "active-route" : ""} 
-                    to='/host/income'>
+                    to='income'>
                     Income
                 </NavLink>
                 <NavLink
                     className={({ isActive }) => isActive ? "active-route" : ""}
-                    to='/host/vans'>
+                    to='vans'>
                     Vans
                 </NavLink>
                 <NavLink 
                     className={({ isActive }) => isActive ? "active-route" : ""} 
-                    to='/host/reviews'>
+                    to='reviews'>
                     Reviews
                 </NavLink>
             </div>
