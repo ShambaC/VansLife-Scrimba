@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { MdOutlineAccountCircle } from 'react-icons/md'
 
 export default function Navbar() {
     return (
@@ -20,6 +21,10 @@ export default function Navbar() {
                     className={({ isActive }) => isActive ? "active-route" : ""}
                     to="/vans">
                     Vans
+                </NavLink>
+                <NavLink 
+                    to="/login">
+                    <MdOutlineAccountCircle />
                 </NavLink>
             </div>
         </nav>
