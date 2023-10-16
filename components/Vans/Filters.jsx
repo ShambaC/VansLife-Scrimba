@@ -1,17 +1,27 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 import Badge from "../Badge";
-import { filterContext } from "../../pages/Vans/Vans";
+import { Link } from "react-router-dom";
 
 export default function Filters() {
-    const { filter, setFilter } = useContext(filterContext)
+    const [filter, setFilter] = useSearchParams()
+    const typeFilter = filter.get("filter")
 
     return (
         <div className="filter-bar">
-            <Badge type="simple" filter={filter} onClick={setFilter} />
-            <Badge type="luxury" filter={filter} onClick={setFilter} />
-            <Badge type="rugged" filter={filter} onClick={setFilter} />
-            <p onClick={() => setFilter("")}>Clear filters</p>
+            <Link to='?filter=simple'>
+                <Badge type="simple" filter={typeFilter} />
+            </Link>
+            <Link to='?filter=luxury'>
+                <Badge type="luxury" filter={typeFilter} />
+            </Link>
+            <Link to='?filter=rugged'>
+                <Badge type="rugged" filter={typeFilter} />
+            </Link>
+            <Link to=''>
+                <p>Clear filters</p>
+            </Link>
         </div>
     )
 }

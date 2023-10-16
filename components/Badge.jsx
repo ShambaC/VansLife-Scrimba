@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Badge({ type, state, filter = "", onClick = () => {} }) {
+export default function Badge({ type, state, filter = "" }) {
     if(filter === type) {
         state = "selected"
     }
@@ -14,8 +14,7 @@ export default function Badge({ type, state, filter = "", onClick = () => {} }) 
 
     return (
         <div className="badge" 
-            style={state ? {background: bg, color: "#FFEAD0"} : {}} 
-            onClick={() => onClick(type)}
+            style={state ? {background: bg, color: "#FFEAD0"} : {}}
         >
             {type}
         </div>

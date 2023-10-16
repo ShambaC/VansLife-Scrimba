@@ -469,3 +469,24 @@ nav a:hover, :active {
     font-weight: bold;
     text-decoration: underline;
 }
+
+/* ---404 PAGE--- */
+
+.page-404 {
+    height: 63%;
+    padding: 1em;
+}
+.page-404 a {
+    background-color: #161616;
+    color: #ffffff;
+
+    display: block;
+    text-align: center;
+    padding: 1em;
+
+    border-radius: 5px;
+}
+.page-404 a:hover, :active {
+    text-decoration: none;
+    font-weight: normal;
+}

@@ -1,17 +1,17 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import Filters from "../../components/Vans/Filters";
 import Card from "../../components/Vans/Card";
 import { Link } from "react-router-dom";
 
-const filterContext = createContext()
-export { filterContext }
-
 export default function Vans() {
     const [vans, setVans] = useState([])
-    const [filter, setFilter] = useState("")
+    const [filter, setFilter] = useSearchParams()
+    const typeFilter = filter.get("filter")
 
     useEffect(() => {
+
         fetch("/api/vans")
             .then(res => res.json())
             .then(data => {
@@ -20,22 +20,21 @@ export default function Vans() {
     }, [])
 
     function returnFilteredList() {
-        if(filter.length > 0) {
-            return vans.filter(van => van.type === filter)
-        }
-
-        return vans
+        return typeFilter ? vans.filter(van => van.type === filter.get("filter")) : vans
     }
 
     return (
-        <filterContext.Provider value={{filter, setFilter}}>
             <div className="vans-body">
                 <h1>Explore our van options</h1>
                 <Filters />
                 <div className="van-cards-panel">
                     {returnFilteredList().map(van => {
                         return (
-                            <Link key={van.id} to={`/vans/${van.id}`} >
+                            <Link 
+                                key={van.id} 
+                                to={`/vans/${van.id}`} 
+                                state={{filter: filter.toString()}} 
+                            >
                                 <Card                                     
                                     id={van.id}
                                     imageUrl={van.imageUrl}
@@ -48,6 +47,5 @@ export default function Vans() {
                     })}
                 </div>
             </div>
-        </filterContext.Provider>
     )
 }

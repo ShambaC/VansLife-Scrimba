@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { BsArrowLeft } from 'react-icons/bs'
 
 import Badge from "../../components/Badge";
@@ -7,6 +7,7 @@ import Badge from "../../components/Badge";
 
 export default function VanDetail() {
     const { id } = useParams()
+    const location = useLocation()
     const [van, setVan] = useState(null)
 
     useEffect(() => {
@@ -17,7 +18,10 @@ export default function VanDetail() {
 
     return (
         <div className="van-detail-body">
-            <Link to="/vans" className="back-btn">
+            <Link 
+                to={`/vans${location.state.filter.length > 0 ? `/?${location.state.filter}` : ""}`} 
+                className="back-btn"
+            >
                 <BsArrowLeft style={{color: "#858585"}}/>
                 <p>Back to all vans</p>
             </Link>
