@@ -12,6 +12,7 @@ import About from './pages/About';
 import Vans from './pages/Vans/Vans';
 import Login from './pages/Login';
 import VanDetail from './pages/Vans/VanDetail';
+import AuthReq from './pages/AuthReq';
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
@@ -34,18 +35,20 @@ function App() {
         <Route path='vans/:id' element={<VanDetail />} />
         <Route path='login' element={<Login />} />
 
-        <Route path='host' element={<HostLayout />} >
-          <Route index element={<Dashboard />} />
-          <Route path='income' element={<Income />} />
-          <Route path='vans' element={<HostVans />} />
+        <Route element={<AuthReq />} >
+          <Route path='host' element={<HostLayout />} >
+            <Route index element={<Dashboard />} />
+            <Route path='income' element={<Income />} />
+            <Route path='vans' element={<HostVans />} />
 
-          <Route path='vans/:id' element={<HostVanDetails />} >
-            <Route index element={<HostVanDesc />} />
-            <Route path='pricing' element={<HostVanPrice />} />
-            <Route path='photos' element={<HostVanPhotos />} />
+            <Route path='vans/:id' element={<HostVanDetails />} >
+              <Route index element={<HostVanDesc />} />
+              <Route path='pricing' element={<HostVanPrice />} />
+              <Route path='photos' element={<HostVanPhotos />} />
+            </Route>
+
+            <Route path='reviews' element={<Reviews />} />
           </Route>
-
-          <Route path='reviews' element={<Reviews />} />
         </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>

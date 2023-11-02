@@ -1,12 +1,43 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = useState({email: "", password: ""})
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    async function loginUser(creds) {
+        const res = await fetch("/api/login",
+            {
+                method: "post",
+                body: JSON.stringify(creds)
+            })
+        const data = await res.json()
+
+        if(!res.ok) {
+            throw {
+                message: data.message,
+                statusText: res.statusText,
+                status: res.status
+            }
+        }
+
+        return data
+    }
 
     function handleSubmit(e) {
         e.preventDefault()
         console.log(loginFormData)
+        try {
+            loginUser(loginFormData)
+                .then(res => {
+                    localStorage.setItem("loggedin", true)
+                    navigate('/host', { replace: true })
+                })
+        }
+        catch(err) {
+            console.log(err.message)
+        }
     }
 
     function handleChange(e) {
@@ -19,6 +50,10 @@ export default function Login() {
 
     return (
         <div className="login-body">
+            {
+                location.state?.message &&
+                <h3 style={{color: "red"}}>{location.state.message}</h3>
+            }
             <h1>Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="login-form">
                 <input

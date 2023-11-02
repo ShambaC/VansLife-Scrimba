@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { MdOutlineAccountCircle } from 'react-icons/md'
+import { FiLogOut } from 'react-icons/fi'
 
 export default function Navbar() {
     return (
@@ -26,6 +27,10 @@ export default function Navbar() {
                     to="/login">
                     <MdOutlineAccountCircle />
                 </NavLink>
+                <button
+                    onClick={() => localStorage.removeItem("loggedin")}>
+                    <FiLogOut />
+                </button>
             </div>
         </nav>
     )
