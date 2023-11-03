@@ -625,6 +625,49 @@ nav a:hover, :active {
     text-decoration: underline;
 }
 
+/* ---HOST REVIEWS PAGE--- */
+
+.host-review-body {
+    padding: 1.2em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    background: #FFF7ED;
+}
+.host-review-body h1, h3 {
+    margin: 0;
+}
+
+.review-toptext {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 1em;
+}
+
+.host-review-body img {
+    content: url(images/reviewChart.png);
+    width: 100%;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.review span {
+    color: #8C8C8C;
+}
+
+.review-stars {
+    color: #FF8C38;
+
+    display: flex;
+    gap: 0.3em;
+}
+
 /* ---404 PAGE--- */
 
 .page-404 {
