@@ -477,6 +477,42 @@ nav a:hover, :active {
     align-items: center;
 }
 
+/* ---HOST INCOME PAGE--- */
+
+.host-income-body {
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+
+    background: #FFF7ED;
+}
+.host-income-body img {
+    content: url(images/PriceChart.png);
+    width: 100%;
+}
+.host-income-body h2 {
+    margin: 0;
+}
+
+.host-income-recent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.host-income-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #ffffff;
+    border-radius: 5px;
+
+    padding: 1.4em 1em;
+}
+
 /* ---HOST VANS PAGE--- */
 
 .host-vans-list-body {
