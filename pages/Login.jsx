@@ -5,6 +5,7 @@ export default function Login() {
     const [loginFormData, setLoginFormData] = useState({email: "", password: ""})
     const location = useLocation()
     const navigate = useNavigate()
+    const from = location.state?.from || "/host"
 
     async function loginUser(creds) {
         const res = await fetch("/api/login",
@@ -32,7 +33,7 @@ export default function Login() {
             loginUser(loginFormData)
                 .then(res => {
                     localStorage.setItem("loggedin", true)
-                    navigate('/host', { replace: true })
+                    navigate(from, { replace: true })
                 })
         }
         catch(err) {
